@@ -1,0 +1,33 @@
+{
+	"manifest_version": 2,
+	"name": "Instance selector for Azure App Service Kudu",
+	"version": "0.1.1",
+	"description": "Launch Azure App Service Kudu or console with selecting an instance.",
+	"permissions": [
+		"https://portal.azure.com/api/*", "https://portal.azure.com/AzureHubs/api/*", "https://management.azure.com/*",
+		"https://portal.azure.cn/api/*", "https://portal.azure.cn/AzureHubs/api/*", "https://management.chinacloudapi.cn/*",
+		"https://portal.microsoftazure.de/api/*", "https://portal.microsoftazure.de/AzureHubs/api/*", "https://management.microsoftazure.de/*",
+		"https://portal.azure.us/api/*", "https://portal.azure.us/AzureHubs/api/*", "https://management.usgovcloudapi.net/*",
+		"webRequest", "webRequestBlocking", "declarativeContent"
+	],
+	"icons" : {
+		"16": "icon/icon16.png",
+		"48": "icon/icon48.png",
+		"128": "icon/icon128.png"
+	},
+	"page_action": {
+		"default_popup": "popup.html",
+		"default_title": "Launch Azure Kudu",
+		"default_icon": {
+			"16": "icon/icon16.png",
+			"48": "icon/icon48.png",
+			"128": "icon/icon128.png"
+		}
+	},
+	"background": {
+		"scripts": ["js/background.js"],
+		"persistent": true
+	},
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://unpkg.com; object-src 'self'",
+	"homepage_url": "https://github.com/pnopjp/AzureKuduInstanceSelector"
+}
