@@ -11,7 +11,11 @@ This Chrome extension makes it easy for you to do that.
 
 ## Requirement
 
-- Google chrome
+- Google Chrome
+
+## Install
+
+- [Chrome Web Store - Instance selector for Azure App Service Kudu](https://chrome.google.com/webstore/detail/instance-selector-for-azu/epdffjkaaohfjahphbancbnaiilkonel)
 
 ## How to use
 
