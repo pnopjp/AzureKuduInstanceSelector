@@ -26,4 +26,3 @@ This Chrome extension makes it easy for you to do that.
 ## Copyright
 
 &copy; 2020 pnop, Inc.
-
