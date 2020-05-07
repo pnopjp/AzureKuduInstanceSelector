@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Instance selector for Azure App Service Kudu",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "Launch Azure App Service Kudu or console with selecting an instance.",
 	"permissions": [
 		"https://portal.azure.com/api/*", "https://portal.azure.com/AzureHubs/api/*", "https://management.azure.com/*",
