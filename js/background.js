@@ -23,7 +23,6 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details){
 }, ['requestHeaders','blocking']);
 
 chrome.runtime.onConnect.addListener( port => {
-	var subResourceMap = {};
 	port.onMessage.addListener( arg => {
 		if( arg.name == "get-accesstoken" ){
             port.postMessage({

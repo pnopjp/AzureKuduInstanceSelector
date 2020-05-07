@@ -12,7 +12,7 @@ class AzureKuduInstanceSelector extends React.Component {
 
 	getCurrentUrl() {
 		return new Promise(function (resolve) {
-			chrome.tabs.getSelected(tab=>{
+			chrome.tabs.getSelected(tab => {
 				resolve(tab.url);
 			})
 		});
@@ -63,32 +63,45 @@ class AzureKuduInstanceSelector extends React.Component {
 		port.postMessage({name: "get-accesstoken"});
 		port.onMessage.addListener(response => {
 			var authorizationToken = response.authorizationToken;
-			console.log(authorizationToken);
-			// Get instances
-			fetch("https://management.azure.com"
-				+ "/subscriptions/" + appservice[1] 
-				+ "/resourceGroups/" + appservice[2] 
-				+ "/providers/Microsoft.Web/sites/" + appservice[3] 
-				+ "/instances?api-version=2019-08-01", 
-			{
-				headers: {
-					'Authorization': authorizationToken,
-					'Content-Type': 'application/json'
-				}
-			}).then(res => res.json()).then(
-				(result) => {
+			if (authorizationToken !== undefined) {
+				// Get instances
+				fetch("https://management.azure.com"
+					+ "/subscriptions/" + appservice[1] 
+					+ "/resourceGroups/" + appservice[2] 
+					+ "/providers/Microsoft.Web/sites/" + appservice[3] 
+					+ "/instances?api-version=2019-08-01", 
+				{
+					headers: {
+						'Authorization': authorizationToken,
+						'Content-Type': 'application/json'
+					}
+				}).then(res => res.json()).then(
+					(result) => {
+						this.setState({
+							isLoaded: true,
+							items: result
+						});
+					},
+					(error) => {
+						this.setState({
+							isLoaded: true,
+							error
+						});
+					}
+				)
+			} else {
+				chrome.tabs.getSelected(tab => {
 					this.setState({
 						isLoaded: true,
-						items: result
-					});
-				},
-				(error) => {
-					this.setState({
-						isLoaded: true,
-						error
-					});
-				}
-			)
+						items: {
+							dontwork: true,
+							message: [
+								"Please reload this App Service page."
+							]
+						}
+					})
+				});
+			}
 		});
 	}
 	
