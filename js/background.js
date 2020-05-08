@@ -51,4 +51,4 @@ chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
 			new chrome.declarativeContent.ShowPageAction()
 		]
 	}]);
-  });
+});
