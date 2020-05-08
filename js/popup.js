@@ -39,8 +39,8 @@ class AzureKuduInstanceSelector extends React.Component {
 		var appservice = [];
 		for (var i = 0; i < regexpAppserviceUrls.length; i ++) {
 			const regexp = RegExp(this.regExpEscape("https://" + portalServer) + regexpAppserviceUrls[i], "i");
-			if (regexp.test(currentTabUrl)) {
-				appservice = currentTabUrl.match(regexp);
+			if (regexp.test(decodeURIComponent(currentTabUrl))) {
+				appservice = decodeURIComponent(currentTabUrl).match(regexp);
 				break;
 			}
 		}
