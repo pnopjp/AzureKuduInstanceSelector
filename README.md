@@ -1,8 +1,11 @@
 # Instance selector for Azure App Service Kudu
 
-Chrome Extension to launch Azure App Service Kudu or console with an instance selected.  
+Chrome Extension to launch Azure App Service Kudu or console with an instance selected.
+
 In Azure App Service for Linux, where multiple instances are running, it is difficult to make an SSH connection to the intended instance.  
-This Chrome extension makes it easy for you to do that.
+This Chrome extension makes it easy for you to do that.  
+
+![Screen Shot](Chrome%20Web%20Store/screenshot.png)
 
 ## Feature
 
