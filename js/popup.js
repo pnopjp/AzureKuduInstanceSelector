@@ -105,7 +105,7 @@ class AzureKuduInstanceSelector extends React.Component {
 		});
 	}
 	
-  	render() {
+	render() {
 		const {error, isLoaded, items} = this.state;
 		if (error) {
 			console.error(error);

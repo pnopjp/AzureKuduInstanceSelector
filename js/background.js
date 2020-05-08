@@ -25,9 +25,9 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details){
 chrome.runtime.onConnect.addListener( port => {
 	port.onMessage.addListener( arg => {
 		if( arg.name == "get-accesstoken" ){
-            port.postMessage({
-                authorizationToken: authorizationToken
-            });
+			port.postMessage({
+				authorizationToken: authorizationToken
+			});
 			return true;
 		}
 	});
