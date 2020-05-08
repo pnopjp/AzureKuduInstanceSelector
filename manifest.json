@@ -17,7 +17,7 @@
 		"128": "icon/icon128.png"
 	},
 	"page_action": {
-		"default_popup": "popup.html",
+		"default_popup": "html/popup.html",
 		"default_title": "Launch Azure Kudu",
 		"default_icon": {
 			"16": "icon/icon16.png",
@@ -27,7 +27,7 @@
 	},
 	"background": {
 		"persistent": true,
-		"page": "background.html"
+		"page": "html/background.html"
 	},
 	"content_security_policy": "script-src 'self' 'unsafe-eval' https://unpkg.com; object-src 'self'",
 	"homepage_url": "https://github.com/pnopjp/AzureKuduInstanceSelector",
