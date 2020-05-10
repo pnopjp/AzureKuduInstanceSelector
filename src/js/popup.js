@@ -46,7 +46,6 @@ class AzureKuduInstanceSelector extends React.Component {
 				break;
 			}
 		}
-		console.log(appservice);
 		if (appservice.length === 0) {
 			var result = {
 				dontwork: true,
