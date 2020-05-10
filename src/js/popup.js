@@ -38,8 +38,8 @@ class AzureKuduInstanceSelector extends React.Component {
 			// [Functions(change "Language & region" Portal settings) 2020/05/10] https://portal.azure.com/?l=en.en-us#blade/WebsitesExtension/FunctionsIFrameBlade/id/%2Fsubscriptions%2F00000000-0000-0000-0000-000000000000%2FresourceGroups%2F{RESOURCEGROUOP}%2Fproviders%2FMicrosoft.Web%2Fsites%2F{SITE}
 			"\\/(?:\\?l=[^#]+)?#blade\\/WebsitesExtension\\/FunctionsIFrameBlade(?:FromNonBrowse)?\\/id\\/\\/subscriptions\\/([^\\/]*)\\/resourcegroups\\/([^\\/]*)\\/providers\\/Microsoft\\.Web\\/sites\\/([^\\/]*)"
 		];
-		var appservice = [];
-		for (var i = 0; i < regexpAppserviceUrls.length; i ++) {
+		let appservice = [];
+		for (let i = 0; i < regexpAppserviceUrls.length; i ++) {
 			const regexp = RegExp(this.regExpEscape("https://" + portalServer) + regexpAppserviceUrls[i], "i");
 			if (regexp.test(decodeURIComponent(currentTabUrl))) {
 				appservice = decodeURIComponent(currentTabUrl).match(regexp);
@@ -47,7 +47,7 @@ class AzureKuduInstanceSelector extends React.Component {
 			}
 		}
 		if (appservice.length === 0) {
-			var result = {
+			const result = {
 				dontwork: true,
 				message: [
 					"This page is not an App Serivce page.",
@@ -64,7 +64,7 @@ class AzureKuduInstanceSelector extends React.Component {
 		// Get AccessToken from Background
 		port.postMessage({name: "get-accesstoken"});
 		port.onMessage.addListener(response => {
-			var authorizationToken = response.authorizationToken;
+			const authorizationToken = response.authorizationToken;
 			if (authorizationToken !== undefined) {
 				// Get instances
 				fetch("https://management.azure.com"
@@ -117,7 +117,7 @@ class AzureKuduInstanceSelector extends React.Component {
 		} else {
 			if (items.dontwork === undefined) {
 				const regexp = /https:\/\/[^\.]*\.scm\.azurewebsites\.net/i;
-				var li = items.value.map(
+				const li = items.value.map(
 					item=> (
 						React.createElement('li', {key: item.name, className: "instance"}, 
 							React.createElement('span', {className: "name"}, "instance: " + item.name.substr(0, 6)), 
@@ -128,7 +128,7 @@ class AzureKuduInstanceSelector extends React.Component {
 				)
 				return e('ul', {className: "instances"}, li);
 			} else {
-				var div = items.message.map(
+				const div = items.message.map(
 					item=> (
 						React.createElement('div', {className: "message"}, item)
 					)
@@ -140,7 +140,7 @@ class AzureKuduInstanceSelector extends React.Component {
 }
 
 const e = React.createElement;
-var port = chrome.runtime.connect({name: "my-background-port"});
+const port = chrome.runtime.connect({name: "my-background-port"});
 
 const domContainer = document.querySelector('#popupContainer');
 ReactDOM.render(e(AzureKuduInstanceSelector), domContainer);

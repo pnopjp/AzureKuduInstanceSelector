@@ -1,7 +1,7 @@
-var authorizationToken;
+let authorizationToken;
 
 // Creaete urls of chrome.webRequest.onBeforeSendHeaders.addListener()
-var onBeforeSendHeadersUrls = [];
+let onBeforeSendHeadersUrls = [];
 BackgroundOnBeforeSendHeadersPortalPaths.forEach(path => {
 	portalServers.forEach(server =>{
 		onBeforeSendHeadersUrls.push("https://" + server + path);
@@ -13,7 +13,7 @@ const servers = managmenetServers.map(server => {
 onBeforeSendHeadersUrls = onBeforeSendHeadersUrls.concat(servers);
 
 chrome.webRequest.onBeforeSendHeaders.addListener(function(details){
-	var header = details.requestHeaders.find(header => header.name === 'Authorization');
+	const header = details.requestHeaders.find(header => header.name === 'Authorization');
 	if (header !== undefined) {
 		authorizationToken = header.value;
 	}
