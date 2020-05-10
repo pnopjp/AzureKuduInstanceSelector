@@ -35,7 +35,8 @@ class AzureKuduInstanceSelector extends React.Component {
 			"\\/[^\\/]*\\/resource\\/subscriptions\\/([^\\/]*)\\/resourceGroups\\/([^\\/]*)\\/providers\\/Microsoft\\.Web\\/sites\\/([^\\/]*)",
 			// [Functions 2020/05/07] https://portal.azure.com/#blade/WebsitesExtension/FunctionsIFrameBlade/id/%2Fsubscriptions%2F00000000-0000-0000-0000-000000000000%2Fresourcegroups%2F{RESOURCEGROUOP}%2Fproviders%2FMicrosoft.Web%2Fsites%2F{SITE}
 			// [Functions(from App Service Plan > Apps) 2020/05/09] https://portal.azure.com/#blade/WebsitesExtension/FunctionsIFrameBladeFromNonBrowse/id/%2Fsubscriptions%2F00000000-0000-0000-0000-000000000000%2FresourceGroups%2F{RESOURCEGROUOP}%2Fproviders%2FMicrosoft.Web%2Fsites%2F{SITE}
-			"\\/#blade\\/WebsitesExtension\\/FunctionsIFrameBlade(?:FromNonBrowse){0,1}\\/id\\/\\/subscriptions\\/([^\\/]*)\\/resourcegroups\\/([^\\/]*)\\/providers\\/Microsoft\\.Web\\/sites\\/([^\\/]*)"
+			// [Functions(change "Language & region" Portal settings) 2020/05/10] https://portal.azure.com/?l=en.en-us#blade/WebsitesExtension/FunctionsIFrameBlade/id/%2Fsubscriptions%2F00000000-0000-0000-0000-000000000000%2FresourceGroups%2F{RESOURCEGROUOP}%2Fproviders%2FMicrosoft.Web%2Fsites%2F{SITE}
+			"\\/(?:\\?l=[^#]+)?#blade\\/WebsitesExtension\\/FunctionsIFrameBlade(?:FromNonBrowse)?\\/id\\/\\/subscriptions\\/([^\\/]*)\\/resourcegroups\\/([^\\/]*)\\/providers\\/Microsoft\\.Web\\/sites\\/([^\\/]*)"
 		];
 		var appservice = [];
 		for (var i = 0; i < regexpAppserviceUrls.length; i ++) {
