@@ -14,7 +14,7 @@ This Chrome extension makes it easy for you to do that.
 
 ## Requirement
 
-- Google Chrome
+- Google Chrome or Microsoft Edge(Chromium base)
 
 ## Install
 
