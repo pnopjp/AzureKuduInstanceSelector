@@ -23,7 +23,7 @@ This Chrome extension makes it easy for you to do that.
 ## How to use
 
 1. Open the App Service or Functions page where you want to make an SSH connection or open Kudu in Azure Portal.
-1. Click  ![Azure Kudu](/src/icon/icon16.png) \(Launch Azure Kudu\) extension icon on Google Chrome.
+1. Click  ![Launch Azure Kudu](/src/icon/icon16.png) \(Launch Azure Kudu\) extension icon on Google Chrome.
 1. Click the "Kudu" or "console" button of the target instance.
 
 ## License
@@ -32,4 +32,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Copyright
 
-&copy; 2020 pnop, Inc.
+&copy; 2020 pnop, Inc. All rights reserved.
