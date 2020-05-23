@@ -23,7 +23,7 @@ Azure App Serviceでインスタンスを指定してKuduやコンソールを�
 ## 利用方法
 
 1. Azure PortalでSSH接続やKuduを開きたいApp ServiceあるいはFunctionsのページを開きます。
-1. Google Chromeで「Launch Azure Kudu」拡張機能アイコンをクリックします。
+1. Google Chromeで拡張機能アイコン ![Azure Kudu](/src/icon/icon16.png) \(Launch Azure Kudu\) をクリックします。
 1. 対象インスタンスの「Kudu」あるいは「console」ボタンをクリックします。
 
 ## ライセンス
