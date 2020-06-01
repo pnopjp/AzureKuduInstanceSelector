@@ -2,7 +2,7 @@
 
 Azure App Serviceでインスタンスを指定してKuduやコンソールを開くGoogle Chromeエクステンションです。
 
-複数インスタンスが稼働しているAzure App Service for Linuxでは、意図したインスタンスに対してSSH接続をすることが難しいです。
+複数インスタンスが稼働しているAzure App Service for Linuxでは、意図したインスタンスに対してSSH接続をすることが難しいです。  
 このChromeエクステンションは、それを容易にします。
 
 ![Screen Shot](Chrome%20Web%20Store/screenshot.png)
@@ -32,4 +32,4 @@ Azure App Serviceでインスタンスを指定してKuduやコンソールを�
 
 ## Copyright
 
-&copy; 2020 株式会社 pnop All rights reserved.
+&copy; 2020 株式会社pnop All rights reserved.
