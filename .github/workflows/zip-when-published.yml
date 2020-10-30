@@ -22,6 +22,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }} 
-          asset_path: ./akis.zip
+          asset_path: ./src/akis.zip
           asset_name: AzureKuduInstanceSelector-${{env.TAG_VERSION}}.zip
           asset_content_type: application/zip
