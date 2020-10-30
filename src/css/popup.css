@@ -30,6 +30,11 @@ li.instance {
 	flex-wrap: nowrap;
 }
 
+li.noinstances {
+	background-color: #ffffff;	
+	padding: 2px 0.5em;
+}
+
 li.instance span {
 	display: inline-block;
 	font-weight: bold;
@@ -57,8 +62,30 @@ li.instance a:active {
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0, 0.30);
 }
 
+ul.slots {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+li.slot {
+	color: #333333;
+	background-color: #cccccc;
+	padding-left: 0.5em;
+	margin-bottom: 3px;
+	list-style-type: none;
+	flex-wrap: nowrap;
+}
+
+div.slot {
+	padding: 0.2em 0.5em 0.2em 0;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
 .dontwork {
 	padding: 0.5em 1em;
+	background-color: #ffffff;
 }
 
 .dontwork .message {
