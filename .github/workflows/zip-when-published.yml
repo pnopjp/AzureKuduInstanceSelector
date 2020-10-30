@@ -1,0 +1,26 @@
+name: Zip archive when published
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Archive package
+        run: |
+          zip -rj akis.zip src/*
+          echo TAG_VERSION=`echo ${{github.ref}} | sed s/^refs.tags.//` >> $GITHUB_ENV
+      - name: Upload zip
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }} 
+          asset_path: ./akis.zip
+          asset_name: AzureKuduInstanceSelector-${{env.TAG_VERSION}}.zip
+          asset_content_type: application/zip
