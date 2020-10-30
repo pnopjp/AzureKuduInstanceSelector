@@ -13,7 +13,7 @@ jobs:
 
       - name: Archive package
         run: |
-          zip -rj akis.zip src/*
+          zip -r akis.zip src/*
           echo TAG_VERSION=`echo ${{github.ref}} | sed s/^refs.tags.//` >> $GITHUB_ENV
       - name: Upload zip
         uses: actions/upload-release-asset@v1
