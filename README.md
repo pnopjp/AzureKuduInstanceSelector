@@ -18,7 +18,7 @@ This Chrome extension makes it easy for you to do that.
 
 ## Install
 
-[![Chrome Web Store - Instance Selector for Azure App Service Kudu](https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/instance-selector-for-azu/epdffjkaaohfjahphbancbnaiilkonel)
+[![Chrome Web Store - Instance Selector for Azure App Service Kudu](Chrome%20Web%20Store/ChromeWebStoreBadge.png)](https://chrome.google.com/webstore/detail/instance-selector-for-azu/epdffjkaaohfjahphbancbnaiilkonel)
 
 ## How to use
 
